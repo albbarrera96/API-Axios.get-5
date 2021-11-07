@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue take 7</title>
+    <link href="style.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+        <h1> API: Axios.get 5</h1>
+        <div id="vue-app">
+            <br>
+            <P STYLE="margin-left: 0.5cm;"> Click in the green button to get the posts from JSON Placeholder. Then, click in the brown button to clear the page </P>
+            <!--This green button triggers getPosts method-->
+            <button @click="getPosts">CLICK HERE</button>
+            <!--This brown button resets posts variable value-->
+            <button style="background-color: brown;" @click="posts = !posts">CLEAR</button>
+            <br>
+            <h3> Loaded posts: {{ posts.length }}</h3>
+            <br>
+            <div class="post" v-for="post in posts">
+            <p> {{ post.id }}</p> 
+            <h3> {{ post.title }}: </h3> 
+            <p> {{post.body}} </p>
+            
+            </div>   
+        </div>
+    <script src="app.js"></script>
+</body>
+</html>
